@@ -1,0 +1,535 @@
+.main-screen {
+    min-height: 100vh;
+}
+
+.dropdown-item:active {
+    background-color: #ff4081;
+}
+
+.first-view {
+    min-height: 650px;
+    width: 100%;
+    background-image: url("../assets/images/bgimage.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-title {
+    color: white;
+    font-family: "Pattaya", sans-serif;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 0 #696969, 1px -1px 0 #696969, -1px 1px 0 #696969, 1px 1px 0 #696969;
+}
+
+.second-view {
+    min-height: 575px;
+    width: 100%;
+    background-color: #fefefe;
+}
+
+.second-view-title {
+    font-family: "Comfortaa";
+}
+
+.info-card {
+    min-width: 250px;
+    max-width: 380px;
+    min-height: 420px;
+
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px !important;
+}
+
+.info-card:hover {
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-wrapper {
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-top-img {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-top-img.first {
+    background-image: url("../assets/images/fragrance-collection.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-top-img.second {
+    background-image: url("../assets/images/celine_n.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-top-img.third {
+    background-image: url("../assets/images/the-difference-between-essential-oils-and-fragrance-oils.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-top-img.fourth {
+    background-image: url("../assets/images/Feature-Image1-shutterstock.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-button-text,
+.contact-button-text {
+    font-family: "Montserrat";
+}
+
+.card-button {
+    border-radius: 0 0 5px 5px;
+    bottom: 0px;
+    background-color: #ff4081;
+    color: white;
+    position: absolute;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: color 1000ms;
+    transition: color 1000ms;
+}
+
+.card-button::before {
+    border-radius: 0 0 5px 5px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff2771;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition: 300ms ease-out;
+    transition: 300ms ease-out;
+}
+
+.card-button:hover::before {
+    border-radius: 0 0 5px 5px;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.description-list {
+    list-style-type: circle;
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    color: #7b7b7b;
+}
+
+/* .third-view {
+    min-height: 600px;
+    width: 100%;
+    background-color: #fefefe;
+    overflow: hidden;
+} */
+
+.fourth-view-desktop {
+    min-height: 400px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.contact-wrapper {
+    height: 400px;
+    width: 100%;
+    background-image: linear-gradient(209deg, #ff3179 18%, #ffffff);
+}
+
+.left-contact {
+    position: relative;
+    z-index: 0;
+}
+
+.left-contact::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 400px;
+    right: 0;
+    left: -59px;
+    top: 0px;
+    transform: skewX(-14deg);
+    z-index: -1;
+    background: url("../assets/images/Fragrances-Header.jpg");
+    opacity: 0.8;
+}
+
+.left-contact-content-wrapper {
+    width: 45vw;
+    padding-right: 1rem;
+    padding-left: 3rem;
+    padding-top: 9rem;
+}
+
+.left-contact-text,
+.top-contact-text {
+    font-family: "Comfortaa";
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    text-shadow:
+    -1px -1px 0 #696969,  
+    1px -1px 0 #696969,
+    -1px 1px 0 #696969,
+    1px 1px 0 #696969;
+}
+
+.right-arrow-icon,
+.right-arrow-icon-mobile {
+    background: url("../assets/images/icons/right-arrow.svg");
+    width: 95px;
+    height: 95px;
+    background-size: cover;
+    margin: 0 auto;
+    fill: white;
+}
+
+.right-arrow-icon-mobile {
+    transform: rotate(90deg);
+}
+
+.right-contact {
+    position: relative;
+    z-index: 0;
+    top: -67%;
+    left: 60%;
+}
+
+.right-contact::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 400px;
+    right: 0;
+    left: 1080px;
+    top: 0px;
+    transform: skewX(-14deg);
+    z-index: -1;
+}
+
+.contact-card {
+    background-color: white;
+    border-radius: 6px;
+    position: absolute;
+    min-height: 360px;
+    width: 30vw;
+    display: grid;
+    box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.contact-button-wrapper {
+    margin-top: 13px;  
+}
+
+.contact-button {
+    background-color: #ff4081;
+    color: white;
+    position: absolute;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: color 1000ms;
+    transition: color 1000ms;
+    width: calc(100% - 32px);
+}
+
+.contact-button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff2771;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition: 300ms ease-out;
+    transition: 300ms ease-out;
+}
+
+.contact-button:hover::before {
+    border-radius: 5px;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.fourth-view-mobile {
+    min-height: 800px;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    background-color: white;
+}
+
+.top-content,
+.bottom-content {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.top-content {
+    height: 400px;
+    width: 100%;
+    background: url("../assets/images/Fragrances-Header.jpg");
+    opacity: 0.8;
+}
+
+.bottom-content {
+    background-image: linear-gradient(209deg, #ff3179 18%, #ffffff);
+}
+
+.contact-card-mobile {
+    background-color: white;
+    border-radius: 6px;
+    min-height: 360px;
+    width: 60vw;
+    display: grid;
+    box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 20%);
+}
+
+textarea {
+    resize: none;
+}
+
+label {
+    font-family: "Comfortaa";
+    margin-bottom: 0.2rem;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1802px) {
+    .info-card {
+        min-height: 540px;
+        max-height: 540px;
+    }
+
+    .info-card.first {
+        margin-right: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.second {
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.third {
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+
+    .info-card.fourth {
+        margin-left: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1775px) {
+    .right-contact {
+        top: -80%;
+    }
+}
+
+@media only screen and (max-width: 1352px) {
+    .info-card.first {
+        margin-right: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.second {
+        margin-left: 1rem;
+        margin-right: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-card.third {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .info-card.fourth {
+        margin-left: 1rem;
+    }
+
+    .left-contact-content-wrapper {
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-top: 8rem;
+    }
+
+    .right-contact {
+        top: -76%;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .description-list {
+        font-size: 15px;
+    }
+
+    .info-card {
+        min-height: 388px;
+    }
+
+    .info-card.first {
+        margin-right: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.second {
+        margin-left: 3rem;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.third {
+        margin-right: 3rem;
+        margin-left: auto;
+    }
+
+    .info-card.fourth {
+        margin-left: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .left-contact-content-wrapper {
+        padding-right: 3rem;
+        padding-left: 2rem;
+        padding-top: 8rem;
+    }
+
+    .left-contact-text {
+        font-size: 30px;
+    }
+
+    .right-arrow-icon {
+        width: 85px;
+        height: 85px;
+    }
+
+    .right-contact {
+        top: -70%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .contact-button-wrapper {
+        position: relative;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+
+    .fourth-view-mobile {
+        display: block;
+    }
+
+    .fourth-view-desktop {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .info-card.first {
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.second {
+        margin-left: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.third {
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-card.fourth {
+        margin-left: auto;
+        margin-bottom: 0;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+    .top-contact-text {
+        font-size: 30px;
+    }
+
+    .right-arrow-icon-mobile {
+        height: 85px;
+        width: 85px;
+    }
+
+    .bottom-contact {
+        width: 100%;
+    }
+    
+    .contact-card-mobile {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 351px) {
+    .main-title {
+        font-size: 50px;
+    }
+
+    .description-list {
+        font-size: 14px;
+    }
+
+    .right-arrow-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .top-contact-text {
+        font-size: 25px;
+    }
+
+    .right-arrow-icon-mobile {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+@media only screen and (max-width: 337px) {
+    .description-list {
+        font-size: 12px;
+    }
+}

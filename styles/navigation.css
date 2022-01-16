@@ -1,0 +1,53 @@
+.navbar-brand-logo {
+    height: 55px;
+}
+
+.transparency {
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0));
+    z-index: 99;
+}
+
+.bg-dark {
+    background-color: transparent !important;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-brand-text {
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 25px;
+}
+
+.dropdown-menu {
+    top: 35px;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+#navbarSupportedContent {
+    font-family: 'Comfortaa', cursive;
+}
+
+@media only screen and (max-width: 991px) {
+    .bg-dark {
+        background-color: #343a40 !important;
+    }
+
+    .transparency {
+        background-image: none !important;
+    }
+}
+
+@media only screen and (max-width: 354px) {
+    .navbar-brand-text {
+        font-size: 20px;
+    }
+}
