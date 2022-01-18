@@ -13,10 +13,6 @@
     margin-top: 50px;
 }
 
-.header-wrapper.filter {
-    padding-bottom: 15px;
-}
-
 .header-wrapper.frags {
     margin-bottom: 50px;
 }
@@ -30,18 +26,84 @@
 
 .main-padding {
     padding-top: 80px;
-    padding-left: 100px;
-    padding-right: 100px;
+    /* padding-left: 100px; */
+    /* padding-right: 100px; */
 }
 
 .custom-divider {
     border-top: 2px solid #8c8b8b;
 }
 
-.panel-wrapper {
-    margin-left: 20px;
-}
-
 .fragrances {
     min-height: 782px;
+}
+
+.add-button {
+    border-radius: 25px !important;
+    bottom: 0px;
+    background-color: #45e25f !important;
+    color: white !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-transition: color 1000ms !important;
+    transition: color 1000ms !important;
+}
+
+.add-button::before {
+    border-radius: 25px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #44ca5a;
+    -webkit-transform: scaleX(0) !important;
+    transform: scaleX(0) !important;
+    -webkit-transition-property: transform !important;
+    transition-property: transform !important;
+    -webkit-transition: 300ms ease-out !important;
+    transition: 300ms ease-out !important;
+}
+
+.add-button:hover::before {
+    border-radius: 25px !important;
+    -webkit-transform: scaleX(1) !important;
+    transform: scaleX(1) !important;
+}
+
+.remove-button {
+    border-radius: 25px !important;
+    bottom: 0px;
+    background-color: #e24545 !important;
+    color: white !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-transition: color 1000ms !important;
+    transition: color 1000ms !important;
+}
+
+.remove-button::before {
+    border-radius: 25px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c03f3f;
+    -webkit-transform: scaleX(0) !important;
+    transform: scaleX(0) !important;
+    -webkit-transition-property: transform !important;
+    transition-property: transform !important;
+    -webkit-transition: 300ms ease-out !important;
+    transition: 300ms ease-out !important;
+}
+
+.remove-button:hover::before {
+    border-radius: 25px !important;
+    -webkit-transform: scaleX(1) !important;
+    transform: scaleX(1) !important;
 }

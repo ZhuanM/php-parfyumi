@@ -40,24 +40,52 @@
     <?php require 'navigation.php'?>
 
     <div class="entirety drag-to-navbar">
-        <div class="main-padding">
+        <div class="container main-padding">
             <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="header-wrapper filter">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="header-wrapper">
                         <div class="header-text">
                             Админски панел
                         </div>
-                        <hr class="custom-divider">
-                        <div class="panel-wrapper">
-                            <button>Добавяне</button>
+                        <hr class="custom-divider mb-0">
+                        <div class="form-wrapper">
+                            <form class="m-0 p-3" action="../includes/frag-list.inc.php" method="post" autocomplete="off">
+                                <div class="form-group">
+                                    <label class="font-comfortaa">Име</label>
+                                    <input type="text" name="name_add" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-comfortaa">Дизайнер</label>
+                                    <input type="text" name="designer_add" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-comfortaa">Пол</label>
+                                    <input type="text" name="gender_add" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-comfortaa">Снимка</label>
+                                    <input type="text" name="image_add" class="form-control" required>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <button type="submit" name="add_submit" class="btn btn-primary add-button no-border-color font-comfortaa w-50">Добавяне</button>
+                                </div>
+                            </form>
                         </div>
-                        <hr>
-                        <div class="panel-wrapper">
-                            <button>Премахване</button>
+                        <hr class="mb-0">
+                        <div class="form-wrapper">
+                            <form class="m-0 p-3" action="../includes/frag-list.inc.php" method="post" autocomplete="off">
+                                <div class="form-group">
+                                    <label class="font-comfortaa">Име</label>
+                                    <input type="text" name="name_remove" class="form-control" required>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <button type="submit" name="remove_submit" class="btn btn-primary remove-button no-border-color font-comfortaa w-50">Премахване</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8 col-lg-6 col-md-6">
+                <div class="col-xl-8 col-lg-8 col-md-6">
                     <div class="header-wrapper frags text-center">
                         <div class="header-text">
                             Лист с парфюми
