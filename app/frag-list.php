@@ -1,3 +1,7 @@
+<style>
+<?php require "../styles/frag-list.css"?>
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +37,44 @@
 </head>
 
 <body>
+    <?php require 'navigation.php'?>
 
-    <?php require 'home.php'?>
+    <div class="entirety drag-to-navbar">
+        <div class="main-padding">
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="header-wrapper filter">
+                        <div class="header-text">
+                            Админски панел
+                        </div>
+                        <hr class="custom-divider">
+                        <div class="panel-wrapper">
+                            <button>Добавяне</button>
+                        </div>
+                        <hr>
+                        <div class="panel-wrapper">
+                            <button>Премахване</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-6 col-md-6">
+                    <div class="header-wrapper frags text-center">
+                        <div class="header-text">
+                            Лист с парфюми
+                        </div>
+                        <hr class="custom-divider">
+                        <div class="fragrances">
+                            <div class="d-inline-block">
+                                <!-- FRAGRANCES -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <?php require 'footer.php'?>
 </body>
 
 </html>

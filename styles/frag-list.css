@@ -1,0 +1,47 @@
+.entirety {
+    background: url(../assets/images/bloom-blooming-bottle-965731.jpg);
+    min-height: calc(100vh - 40px);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.header-wrapper {
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid#666666;
+    margin-top: 50px;
+}
+
+.header-wrapper.filter {
+    padding-bottom: 15px;
+}
+
+.header-wrapper.frags {
+    margin-bottom: 50px;
+}
+
+.header-text {
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 13px;
+}
+
+.main-padding {
+    padding-top: 80px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.custom-divider {
+    border-top: 2px solid #8c8b8b;
+}
+
+.panel-wrapper {
+    margin-left: 20px;
+}
+
+.fragrances {
+    min-height: 782px;
+}

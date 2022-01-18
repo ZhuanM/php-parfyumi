@@ -1,5 +1,5 @@
 .entire-screen {
-    background-image: url("../assets/images/alex-blajan-142752-unsplash.jpg");
+    background-image: url("../assets/images/pikwizard-488804619e80291f9afe0a46e70df626.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -12,7 +12,7 @@
     border-radius: 10px;
 }
 
-.register-button {
+.login-button {
     border-radius: 5px !important;
     bottom: 0px;
     background-color: #ff4081 !important;
@@ -24,7 +24,7 @@
     transition: color 1000ms !important;
 }
 
-.register-button::before {
+.login-button::before {
     border-radius: 5px;
     content: "";
     position: absolute;
@@ -42,7 +42,7 @@
     transition: 300ms ease-out !important;
 }
 
-.register-button:hover::before {
+.login-button:hover::before {
     border-radius: 5px !important;
     -webkit-transform: scaleX(1) !important;
     transform: scaleX(1) !important;

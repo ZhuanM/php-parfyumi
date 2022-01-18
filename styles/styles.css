@@ -87,3 +87,28 @@ label:focus,
 .pointer {
     cursor: pointer;
 }
+
+.main-screen {
+    min-height: 100vh;
+}
+
+.parfyumi-bg-color {
+    background-color: #ff4081 !important;
+}
+
+.no-border-color {
+    border-color: unset !important;
+}
+
+.font-comfortaa {
+    font-family: "Comfortaa";
+}
+
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}

@@ -1,5 +1,5 @@
 <style>
-    <?php require "../styles/footer.css" ?> 
+<?php require "../styles/footer.css"?>
 </style>
 
 <footer>
@@ -20,7 +20,8 @@
             </a>
         </div>
         <div class="col-auto d-flex align-items-center">
-            <a class="anchor-color-unset" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/zhuan-mustafa/">
+            <a class="anchor-color-unset" target="_blank" rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/zhuan-mustafa/">
                 <i class="fab fa-linkedin-in social-media-icons pointer"></i>
             </a>
         </div>
@@ -37,11 +38,12 @@
     </div>
     <div class="row m-0 my-2">
         <div class="col pr-0 pl-5 d-flex justify-content-center align-items-center">
-            <div class="copyright-text ml-5"><span class="fs-18px">©</span> Parfyumi.info</div>       
+            <div class="copyright-text ml-5"><span class="fs-18px">©</span> Parfyumi.info</div>
         </div>
         <div class="col-auto d-flex justify-content-center align-items-center">
             <div class="privacy-text">
-                <a class="anchor-color-unset" target="_blank" rel="noopener noreferrer" href="https://www.privacypolicygenerator.info/live.php?token=DWb0dPf2lrfIEp7gu9TX9HvDAkWm53DA">
+                <a class="anchor-color-unset" target="_blank" rel="noopener noreferrer"
+                    href="https://www.privacypolicygenerator.info/live.php?token=DWb0dPf2lrfIEp7gu9TX9HvDAkWm53DA">
                     Privacy Policy
                 </a>
             </div>
