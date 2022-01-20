@@ -160,26 +160,26 @@ session_start();
                 </div>
                 <div class="right-contact">
                     <div class="contact-card p-3">
-                        <form>
+                        <form action='../includes/home.inc.php' method='post' autocomplete='off'>
                             <div class="form-group mb-3">
                                 <label for="name-contact">Име</label>
-                                <input type="text" class="form-control" id="name-contact" aria-describedby="emailHelp"
-                                    placeholder="Напишете вашето име">
+                                <input type="text" name="desktop_feedback_name" class="form-control font-comfortaa" id="name-contact" aria-describedby="emailHelp"
+                                    placeholder="Напишете вашето име" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="email-contact">Имейл</label>
-                                <input type="text" class="form-control" id="email-contact"
-                                    placeholder="Напишете вашият имейл">
+                                <input type="text" name="desktop_feedback_email" class="form-control font-comfortaa" id="email-contact"
+                                    placeholder="Напишете вашият имейл" required>
                             </div>
                             <div class="form-group last-margin">
                                 <label for="message-contact">Съобщение</label>
-                                <textarea class="form-control" id="message-contact" rows="3" cols="50"
-                                    placeholder="Напишете вашето съобщение"></textarea>
+                                <textarea class="form-control font-comfortaa" name="desktop_feedback_message" id="message-contact" rows="3" cols="50"
+                                    placeholder="Напишете вашето съобщение" required></textarea>
                             </div>
                             <div class="contact-button-wrapper d-flex align-items-center">
                                 <a href="../app/index.php">
-                                    <button type="submit" class="btn contact-button d-flex justify-content-center">
-                                        <span class="contact-button-text">Изпрати</span>
+                                    <button type="submit" name="desktop_feedback_submit" class="btn contact-button d-flex justify-content-center">
+                                        <span class="contact-button-text" >Изпрати</span>
                                     </button>
                                 </a>
                             </div>
@@ -201,25 +201,25 @@ session_start();
                 <div class="col d-flex justify-content-center">
                     <div class="bottom-contact">
                         <div class="contact-card-mobile p-3">
-                            <form>
+                            <form action='../includes/home.inc.php' method='post' autocomplete='off'>
                                 <div class="form-group mb-3">
                                     <label for="name-contact">Име</label>
-                                    <input type="text" class="form-control" id="name-contact"
-                                        aria-describedby="emailHelp" placeholder="Напишете вашето име">
+                                    <input type="text" class="form-control font-comfortaa" name="mobile_feedback_name" id="name-contact"
+                                        aria-describedby="emailHelp" placeholder="Напишете вашето име" required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="email-contact">Имейл</label>
-                                    <input type="text" class="form-control" id="email-contact"
-                                        placeholder="Напишете вашият имейл">
+                                    <input type="text" class="form-control font-comfortaa" name="mobile_feedback_email" id="email-contact"
+                                        placeholder="Напишете вашият имейл" required>
                                 </div>
                                 <div class="form-group last-margin">
                                     <label for="message-contact">Съобщение</label>
-                                    <textarea class="form-control" id="message-contact" rows="3" cols="50"
-                                        placeholder="Напишете вашето съобщение"></textarea>
+                                    <textarea class="form-control font-comfortaa" name="mobile_feedback_message" id="message-contact" rows="3" cols="50"
+                                        placeholder="Напишете вашето съобщение" required></textarea>
                                 </div>
                                 <div class="contact-button-wrapper d-flex align-items-center">
                                     <a href="../app/index.php">
-                                        <button type="submit" class="btn w-100 contact-button d-flex justify-content-center">
+                                        <button type="submit" name="mobile_feedback_submit" class="btn w-100 contact-button d-flex justify-content-center">
                                             <span class="contact-button-text">Изпрати</span>
                                         </button>
                                     </a>

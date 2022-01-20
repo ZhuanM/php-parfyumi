@@ -56,10 +56,8 @@
                                     <label class="font-comfortaa">Потребителско име</label>
                                     <input type="text" name="username" class="form-control" required>
                                     <?php
-                                        if (isset($_GET['error'])) {
-                                            if ($_GET["error"] === "username_exists") {
-                                                echo "<div class='error-message'> Username already exists! </div>";
-                                            }
+                                        if (isset($_GET['error']) && $_GET["error"] === "username_exists") {
+                                            echo "<div class='error-message'> Потребителското име вече съществува! </div>";
                                         }
                                     ?>
                                 </div>
@@ -71,9 +69,9 @@
                                     <?php
                                         if (isset($_GET['error'])) {
                                             if ($_GET["error"] === "email_exists") {
-                                                echo "<div class='error-message'> Email already exists! </div>";
+                                                echo "<div class='error-message'> Имейлът вече същевствува! </div>";
                                             } else if ($_GET["error"] === "invalid_email") {
-                                                echo "<div class='error-message'> Enter a valid email! </div>";
+                                                echo "<div class='error-message'> Въведете валиден имейл! </div>";
                                             }
                                         } 
                                     ?>
@@ -84,10 +82,8 @@
                                     <label class="font-comfortaa">Парола</label>
                                     <input type="password" name="password" class="form-control" required>
                                     <?php
-                                        if (isset($_GET['error'])) {
-                                            if ($_GET["error"] === "invalid_password") {
-                                                echo "<div class='error-message'> Password must contain 8 characters with at least 1 letter! </div>";
-                                            }
+                                        if (isset($_GET['error']) && $_GET["error"] === "invalid_password") {
+                                            echo "<div class='error-message'> Паролата трябва да съдържа 8 знака и поне една буква! </div>";
                                         } 
                                     ?>
                                 </div>
@@ -96,10 +92,8 @@
                                     <input type="password" name="repeat_password" class="form-control" required>
                                 </div>
                                 <?php
-                                    if (isset($_GET['error'])) {
-                                        if ($_GET["error"] = "invalid_repeat_password") {
-                                            echo "<div class='error-message'> Passwords must match! </div>";
-                                        }
+                                    if (isset($_GET['error']) && $_GET["error"] === "invalid_repeat_password") {
+                                        echo "<div class='error-message'> Паролите трябва да съвпадат! </div>";
                                     } 
                                 ?>
                                 <button type="submit" name="submit"

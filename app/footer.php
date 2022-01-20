@@ -30,7 +30,7 @@
         <div class="col d-flex justify-content-center align-items-center">
             <div class="row m-0">
                 <input class="col signup-input-text form-control" placeholder="Запишете се за бюлетина">
-                <button class="col-auto btn signup-button" aria-label="search">
+                <button class="col-auto btn signup-button font-comfortaa" aria-label="search">
                     ЗАПИСВАНЕ
                 </button>
             </div>

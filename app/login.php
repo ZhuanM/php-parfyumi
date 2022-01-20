@@ -54,10 +54,8 @@
                                     <input type="password" name="password" class="form-control" required>
                                 </div>
                                 <?php
-                                    if (isset($_GET['error'])) {
-                                        if ($_GET["error"] === "credentials") {
-                                            echo "<div class='error-message mb-3'> Incorrect username and/or password! </div>";
-                                        }
+                                    if (isset($_GET['error']) && $_GET["error"] === "credentials") {
+                                        echo "<div class='error-message mb-3'> Неправилно потребителско име или парола! </div>";
                                     }
                                 ?>
                                 <button type="submit" name="submit" class="btn btn-primary login-button no-border-color font-comfortaa w-100">Влизане</button>

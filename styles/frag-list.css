@@ -107,3 +107,53 @@
     -webkit-transform: scaleX(1) !important;
     transform: scaleX(1) !important;
 }
+
+.fragrance-container {
+    height: 280px;
+    width: 200px;
+    border: 1px solid #666666;
+    border-radius: 25px;
+    margin: 10px 10px;
+    box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 20%);
+}
+
+.fragrance-container:hover {
+    box-shadow: 0px 0px 5px 3px rgb(0 0 0 / 10%);
+}
+
+.fragrance-container img {
+    display: block;
+    margin: auto;
+    height: 190px;
+    width: 150px;
+}
+
+.frag-name {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Lobster', cursive;
+    color:#333333;
+}
+
+.frag-brand {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Abel', sans-serif;
+    margin-bottom: 2px;
+}
+
+.frag-gender {
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+}
+
+.custom-select:focus {
+    box-shadow: none !important;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}

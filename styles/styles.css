@@ -104,7 +104,6 @@ label:focus,
     font-family: "Comfortaa";
 }
 
-
 .unselectable {
     -moz-user-select: -moz-none;
     -khtml-user-select: none;

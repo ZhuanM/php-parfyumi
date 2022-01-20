@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+require('../config/connection.php');
+
+$query = "SELECT * FROM fragrances ORDER BY gender DESC";
+
+$fragrances = $conn->query($query);
+
+?>
+
 <style>
 <?php require "../styles/frag-list.css"?>
 </style>
@@ -32,6 +44,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <!-- TITLE -->
     <title>Parfyumi</title>
 </head>
@@ -42,49 +57,65 @@
     <div class="entirety drag-to-navbar">
         <div class="container main-padding">
             <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="header-wrapper">
-                        <div class="header-text">
-                            Админски панел
+                <?php
+                    if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?> 
+                    <div class='col-xl-4 col-lg-4 col-md-6'>
+                        <div class='header-wrapper'>
+                            <div class='header-text'>
+                                Админски панел
+                            </div>
+                            <hr class='custom-divider mb-0'>
+                            <div class='form-wrapper'>
+                                <form class='m-0 p-3' action='../includes/frag-list.inc.php' method='post' autocomplete='off'>
+                                    <div class='form-group'>
+                                        <label class='font-comfortaa' for='add_name'>Име</label>
+                                        <input type='text' name='add_name' id='add_name' class='form-control font-comfortaa' required>
+                                    </div> <?php 
+                                        if (isset($_GET['error']) && $_GET['error'] === 'name_exists') {
+                                            echo "<div class='error-message mb-3'> Името вече съществува! </div>";
+                                        } 
+                                    ?>
+                                    <div class='form-group'>
+                                        <label class='font-comfortaa' for='add_brand'>Дизайнер</label>
+                                        <input type='text' name='add_brand' id='add_brand' class='form-control font-comfortaa' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='font-comfortaa' for='add_gender'>Пол</label>
+                                        <select class='custom-select font-comfortaa pointer' name='add_gender' id='add_gender'>
+                                          <option value='Мъже'>Мъже</option>
+                                          <option value='Жени'>Жени</option>
+                                          <option value='Унисекс'>Унисекс</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='font-comfortaa' for='add_image'>Снимка</label>
+                                        <input type='text' name='add_image' id='add_image' class='form-control font-comfortaa' required>
+                                    </div>
+                                    <div class='row justify-content-center'>
+                                        <button type='submit' name='add_submit' class='btn btn-primary add-button no-border-color font-comfortaa w-50'>Добавяне</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <hr class='mb-0'>
+                            <div class='form-wrapper'>
+                                <form class='m-0 p-3' action='../includes/frag-list.inc.php' method='post' autocomplete='off'>
+                                    <div class='form-group'>
+                                        <label class='font-comfortaa' for='remove_name'>Име</label>
+                                        <input type='text' name='remove_name' id='remove_name' class='form-control' required>
+                                    </div> <?php
+                                        if (isset($_GET['error']) && $_GET['error'] === 'name_doesnt_exist') {
+                                            echo "<div class='error-message mb-3'> Името не съществува! </div>";
+                                        } 
+                                    ?>
+                                    <div class='row justify-content-center'>
+                                        <button type='submit' name='remove_submit' class='btn btn-primary remove-button no-border-color font-comfortaa w-50'>Премахване</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <hr class="custom-divider mb-0">
-                        <div class="form-wrapper">
-                            <form class="m-0 p-3" action="../includes/frag-list.inc.php" method="post" autocomplete="off">
-                                <div class="form-group">
-                                    <label class="font-comfortaa">Име</label>
-                                    <input type="text" name="name_add" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-comfortaa">Дизайнер</label>
-                                    <input type="text" name="designer_add" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-comfortaa">Пол</label>
-                                    <input type="text" name="gender_add" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-comfortaa">Снимка</label>
-                                    <input type="text" name="image_add" class="form-control" required>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <button type="submit" name="add_submit" class="btn btn-primary add-button no-border-color font-comfortaa w-50">Добавяне</button>
-                                </div>
-                            </form>
-                        </div>
-                        <hr class="mb-0">
-                        <div class="form-wrapper">
-                            <form class="m-0 p-3" action="../includes/frag-list.inc.php" method="post" autocomplete="off">
-                                <div class="form-group">
-                                    <label class="font-comfortaa">Име</label>
-                                    <input type="text" name="name_remove" class="form-control" required>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <button type="submit" name="remove_submit" class="btn btn-primary remove-button no-border-color font-comfortaa w-50">Премахване</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                    </div> <?php ;
+                    }
+                ?>
                 <div class="col-xl-8 col-lg-8 col-md-6">
                     <div class="header-wrapper frags text-center">
                         <div class="header-text">
@@ -92,9 +123,18 @@
                         </div>
                         <hr class="custom-divider">
                         <div class="fragrances">
-                            <div class="d-inline-block">
-                                <!-- FRAGRANCES -->
-                            </div>
+                            <?php
+                                while ($frag = mysqli_fetch_assoc($fragrances)) :
+                            ?>
+                                <div class="d-inline-block fragrance-container pointer">
+                                  <img src="<?= $frag["image"]; ?>" alt="Fragrance image">
+                                  <div class="frag-name"><?= $frag["name"]; ?></div>
+                                  <div class="frag-brand"><?= $frag["brand"]; ?></div>
+                                  <div class="frag-gender"><?= $frag["gender"] ?></div>
+                                </div>
+                            <?php
+                                endwhile;
+                            ?>
                         </div>
                     </div>
                 </div>

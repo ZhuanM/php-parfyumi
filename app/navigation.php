@@ -3,11 +3,9 @@
 <?php require "../styles/navigation.css"?>
 </style>
 
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top transparency">
     <div class="container">
-        <a class="navbar-brand" href="./index.php">
+        <a class="navbar-brand" href="./home.php">
             <img class="navbar-brand-logo" src="../assets/images/icons/website_logo_white.png">
             <span class="navbar-brand-text">
                 Parfyumi.info
@@ -20,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active pointer mr-4">
-                    <a class="nav-link" href="./index.php">Начало
+                    <a class="nav-link" href="./home.php">Начало
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -40,6 +38,13 @@
                             href="https://www.fragrantica.com/">Новини</a>
                     </div>
                 </li>
+                <?php
+                    if (isset($_SESSION["isAdmin"]) && $_SESSION['isAdmin']) {
+                        echo "<li class='nav-item active mr-4'>
+                                <a class='nav-link' href='./messages.php'>Съобщения</a>
+                            </li>";
+                    }
+                ?>
                 <?php 
                     if (isset($_SESSION["username"])) {
                         echo "<li class='nav-item active mr-4'>
