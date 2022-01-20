@@ -5,21 +5,20 @@ if (isset($_POST["add_submit"])) {
     $add_brand = $_POST["add_brand"];
     $add_gender = $_POST["add_gender"];
     $add_image = $_POST["add_image"];
-    
+
     require('../config/connection.php');
 
-    mysqli_select_db($conn, "fragrances");
-    
     $nameExists = nameExists($conn, $add_name);
 
     if ($nameExists) {
         header("Location: ../app/frag-list.php?error=name_exists");
         exit();
     } else {
-        $queryAdd = "INSERT INTO fragrances (name, brand, gender, image)
-         VALUES ('$add_name', '$add_brand', '$add_gender', '$add_image')";
+        $stmt = $conn->prepare("INSERT INTO fragrances(name, brand, gender, image) VALUES(?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $add_name, $add_brand, $add_gender, $add_image);
+        $stmt->execute();
+        $stmt->close();
 
-        mysqli_query($conn, $queryAdd);
         mysqli_close($conn);
 
         header("Location: ../app/frag-list.php");
@@ -30,17 +29,17 @@ if (isset($_POST["add_submit"])) {
 
     require('../config/connection.php');
 
-    mysqli_select_db($conn, "fragrances");
-
     $nameExists = nameExists($conn, $remove_name);
 
     if (!$nameExists) {
         header("Location: ../app/frag-list.php?error=name_doesnt_exist");
         exit();
     } else {
-        $queryRemove = "DELETE FROM fragrances WHERE name = '$remove_name'";
+        $stmt = $conn->prepare("DELETE FROM fragrances WHERE name = ?");
+        $stmt->bind_param("s", $remove_name);
+        $stmt->execute();
+        $stmt->close();
 
-        mysqli_query($conn, $queryRemove);
         mysqli_close($conn);
 
         header("Location: ../app/frag-list.php");
@@ -51,11 +50,11 @@ if (isset($_POST["add_submit"])) {
     
     require('../config/connection.php');
 
-    mysqli_select_db($conn, "fragrances");
-    
-    $queryRemove = "DELETE FROM fragrances WHERE id = '$frag_id'";
+    $stmt = $conn->prepare("DELETE FROM fragrances WHERE id = ?");
+    $stmt->bind_param("s", $frag_id);
+    $stmt->execute();
+    $stmt->close();
 
-    mysqli_query($conn, $queryRemove);
     mysqli_close($conn);
 
     header("Location: ../app/frag-list.php");

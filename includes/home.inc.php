@@ -7,12 +7,11 @@ if (isset($_POST["desktop_feedback_submit"])) {
     
     require('../config/connection.php');
 
-    mysqli_select_db($conn, "messages");
-    
-    $queryFeedbackDesktop = "INSERT INTO messages (name, email, message)
-     VALUES ('$desktop_feedback_name', '$desktop_feedback_email', '$desktop_feedback_message')";
+    $stmt = $conn->prepare("INSERT INTO messages(name, email, message) VALUES(?, ?, ?)");
+    $stmt->bind_param("sss", $desktop_feedback_name, $desktop_feedback_email, $desktop_feedback_message);
+    $stmt->execute();
+    $stmt->close();
 
-    mysqli_query($conn, $queryFeedbackDesktop);
     mysqli_close($conn);
 
     header("Location: ../app/home.php");
@@ -24,12 +23,11 @@ if (isset($_POST["desktop_feedback_submit"])) {
 
     require('../config/connection.php');
 
-    mysqli_select_db($conn, "messages");
+    $stmt = $conn->prepare("INSERT INTO messages(name, email, message) VALUES(?, ?, ?)");
+    $stmt->bind_param("sss", $mobile_feedback_name, $mobile_feedback_email, $mobile_feedback_message);
+    $stmt->execute();
+    $stmt->close();
 
-    $queryFeedbackMobile = "INSERT INTO messages (name, email, message)
-        VALUES ('$mobile_feedback_name', '$mobile_feedback_email', '$mobile_feedback_message')";
-
-    mysqli_query($conn, $queryFeedbackMobile);
     mysqli_close($conn);
 
     header("Location: ../app/home.php");

@@ -10,8 +10,6 @@ if (isset($_POST["submit"])) {
 
     require('../config/connection.php');
     
-    mysqli_select_db($conn, "users");
-    
     $u_s = "SELECT * FROM users WHERE username = '$username'";
     $username_result = mysqli_query($conn, $u_s);
     $username_num = mysqli_num_rows($username_result);
@@ -36,10 +34,11 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    $reg = "INSERT INTO users(first_name, last_name, username, email, password) VALUES('$first_name', '$last_name', '$username', '$email', '$password')";
-    mysqli_query($conn, $reg);
+    $stmt = $conn->prepare("INSERT INTO users(first_name, last_email, username, email, password) VALUES(?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $first_name, $last_name, $username, $email, $password);
+    $stmt->execute();
+    $stmt->close();
 
-    mysqli_close($conn);
     header("Location: ../app/home.php");
     exit();
 } else {
