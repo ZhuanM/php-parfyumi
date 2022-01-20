@@ -4,7 +4,7 @@ session_start();
 
 require('../config/connection.php');
 
-$query = "SELECT * FROM fragrances ORDER BY gender DESC";
+$query = "SELECT * FROM fragrances ORDER BY gender DESC, brand ASC, name ASC";
 
 $fragrances = $conn->query($query);
 
@@ -142,7 +142,7 @@ $fragrances = $conn->query($query);
                                   <img src="<?= $frag["image"]; ?>" alt="Fragrance image">
                                   <div class="frag-name"><?= $frag["name"]; ?></div>
                                   <div class="frag-brand"><?= $frag["brand"]; ?></div>
-                                  <div class="frag-gender mb-1"><?= $frag["gender"] ?></div>
+                                  <div class="frag-gender font-comfortaa mb-1"><?= $frag["gender"] ?></div>
                                 </div>
                             <?php
                                 endwhile;
