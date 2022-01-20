@@ -93,7 +93,7 @@
                                 </div>
                                 <?php
                                     if (isset($_GET['error']) && $_GET["error"] === "invalid_repeat_password") {
-                                        echo "<div class='error-message'> Паролите трябва да съвпадат! </div>";
+                                        echo "<div class='error-message mb-3'> Паролите трябва да съвпадат! </div>";
                                     } 
                                 ?>
                                 <button type="submit" name="submit"

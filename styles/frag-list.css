@@ -109,7 +109,7 @@
 }
 
 .fragrance-container {
-    height: 280px;
+    /* height: 280px; */
     width: 200px;
     border: 1px solid #666666;
     border-radius: 25px;
@@ -156,4 +156,13 @@
 .error-message {
     color: red;
     font-size: 14px;
+}
+
+.quick-delete-button {
+    color: white !important;
+}
+
+.close-circle {
+    font-size: 25px;
+    color: #e24545;
 }

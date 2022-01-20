@@ -11,7 +11,7 @@ $fragrances = $conn->query($query);
 ?>
 
 <style>
-<?php require "../styles/frag-list.css"?>
+<?php  require "../styles/frag-list.css" ?>
 </style>
 
 <!DOCTYPE html>
@@ -49,6 +49,8 @@ $fragrances = $conn->query($query);
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <!-- TITLE -->
     <title>Parfyumi</title>
+    <!-- CUSTOM CSS PHP -->
+    <link rel="stylesheet" type="text/css" href="../styles/frag-list.css.php">
 </head>
 
 <body>
@@ -122,15 +124,25 @@ $fragrances = $conn->query($query);
                             Лист с парфюми
                         </div>
                         <hr class="custom-divider">
-                        <div class="fragrances">
+                        <div class="fragrances mb-3">
                             <?php
                                 while ($frag = mysqli_fetch_assoc($fragrances)) :
                             ?>
                                 <div class="d-inline-block fragrance-container pointer">
+                                <?php
+                                    if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?> 
+                                        <form class='m-0' action='../includes/frag-list.inc.php' method='post'>
+                                            <input type='hidden' name='frag_id' value='<?=$frag['id']?>'>
+                                            <button type='submit' name='quick_delete' class='btn quick-delete-button no-border-color'>
+                                                <i class="fas fa-times-circle close-circle"></i>
+                                            </button>
+                                        </form> <?php ;
+                                    }
+                                    ?>
                                   <img src="<?= $frag["image"]; ?>" alt="Fragrance image">
                                   <div class="frag-name"><?= $frag["name"]; ?></div>
                                   <div class="frag-brand"><?= $frag["brand"]; ?></div>
-                                  <div class="frag-gender"><?= $frag["gender"] ?></div>
+                                  <div class="frag-gender mb-1"><?= $frag["gender"] ?></div>
                                 </div>
                             <?php
                                 endwhile;

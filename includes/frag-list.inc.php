@@ -46,6 +46,20 @@ if (isset($_POST["add_submit"])) {
         header("Location: ../app/frag-list.php");
         exit();
     }
+} else if (isset($_POST["quick_delete"])) {
+    $frag_id = $_POST['frag_id'];
+    
+    require('../config/connection.php');
+
+    mysqli_select_db($conn, "fragrances");
+    
+    $queryRemove = "DELETE FROM fragrances WHERE id = '$frag_id'";
+
+    mysqli_query($conn, $queryRemove);
+    mysqli_close($conn);
+
+    header("Location: ../app/frag-list.php");
+    exit();
 } else {
     header("Location: ../app/home.php");
     exit();

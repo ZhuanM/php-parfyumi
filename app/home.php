@@ -177,7 +177,7 @@ session_start();
                                     placeholder="Напишете вашето съобщение" required></textarea>
                             </div>
                             <div class="contact-button-wrapper d-flex align-items-center">
-                                <a href="../app/index.php">
+                                <a href="../app/home.php">
                                     <button type="submit" name="desktop_feedback_submit" class="btn contact-button d-flex justify-content-center">
                                         <span class="contact-button-text" >Изпрати</span>
                                     </button>
@@ -218,7 +218,7 @@ session_start();
                                         placeholder="Напишете вашето съобщение" required></textarea>
                                 </div>
                                 <div class="contact-button-wrapper d-flex align-items-center">
-                                    <a href="../app/index.php">
+                                    <a href="../app/home.php">
                                         <button type="submit" name="mobile_feedback_submit" class="btn w-100 contact-button d-flex justify-content-center">
                                             <span class="contact-button-text">Изпрати</span>
                                         </button>
